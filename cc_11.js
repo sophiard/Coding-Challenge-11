@@ -140,6 +140,6 @@ console.log("Task 4 part 2:", JSON.stringify(borrower1.borrowedBooks));
 
 // logging task 5
 library.returnBook(201, 123456);
-console.log("Task 5 part 1:", book1.getDetails());
-console.log("Task 5 part 2:", JSON.stringify(borrower1.borrowedBooks));
+console.log("Task 5 -part 1:", book1.getDetails());
+console.log("Task 5 -part 2:", JSON.stringify(borrower1.borrowedBooks));
 // logging task 5 
