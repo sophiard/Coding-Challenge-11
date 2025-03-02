@@ -111,18 +111,18 @@ class Library {
 
 // logging Task 1
 const book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 123456, 5);
-console.log("Task 1 part 1:", book1.getDetails()); 
+console.log("Task 1 - part 1:", book1.getDetails()); 
 book1.updateCopies(-1);
-console.log("Task 1 part 2:", book1.getDetails()); 
+console.log("Task 1 - part 2:", book1.getDetails()); 
 // logging Task 1
 
 // logging task 2 
 const borrower1 = new Borrower("Alice Johnson", 201);
 borrower1.borrowBook("The Great Gatsby");
-console.log("Task 2 Part 1:", JSON.stringify(borrower1.borrowedBooks)); 
+console.log("Task 2 - Part 1:", JSON.stringify(borrower1.borrowedBooks)); 
 
 borrower1.returnBook("The Great Gatsby");
-console.log("Task 2 part 2:", JSON.stringify(borrower1.borrowedBooks)); 
+console.log("Task 2 - part 2:", JSON.stringify(borrower1.borrowedBooks)); 
 // logging task 2
 
 // logging task 3
@@ -134,8 +134,8 @@ library.listBooks();
 
 // logging Task 4
 library.lendBook(201, 123456);
-console.log("Task 4 part 1:", book1.getDetails());
-console.log("Task 4 part 2:", JSON.stringify(borrower1.borrowedBooks));
+console.log("Task 4 - part 1:", book1.getDetails());
+console.log("Task 4-  part 2:", JSON.stringify(borrower1.borrowedBooks));
 // logging task 4
 
 // logging task 5
