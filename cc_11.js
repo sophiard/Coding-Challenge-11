@@ -57,7 +57,30 @@ class Library {
         });
     };   //logged book details
     
-        }
+    // Task 4: Implementing Book Borrowing
+   
+    lendBook(borrowerId, isbn) {
+        const book = this.books.find(b => b.isbn === isbn); // Checks if the book exists 
+        if (!book) {
+            console.log("Book is not in library");
+            return;
+        } //created a method lendbook in the library class and checks to see if book is real
+        if (book.copies <= 0) { 
+            console.log("No copies availible");
+            return;
+        }// sees how many copies are available 
+
+        const borrower = this.borrowers.find(bw => bw.borrowerId === borrowerId);
+        if (!borrower) {
+            console.log("Borrower not found");//if it can not be traced
+            return;
+        }// see who is currently borrowing the book 
+        book.updateCopies(-1); // subtracts from book amaount
+        borrower.borrowBook(book.title); 
+        console.log(`${book.title} has been borrowed`);
+    }
+};
+
 
 
 // logging Task 1
@@ -66,6 +89,7 @@ console.log("Task 1 part 1:", book1.getDetails());
 book1.updateCopies(-1);
 console.log("Task 1 part 2:", book1.getDetails()); 
 // logging Task 1
+
 
 //logging task 2 
 const borrower1 = new Borrower("Alice Johnson", 201);
@@ -82,3 +106,10 @@ const library = new Library();
 library.addBook(book1);
 library.listBooks(); 
 //logging task 3
+
+
+//logging Task 4
+library.lendBook(201, 123456);
+console.log("Task 4 part 1:", book1.getDetails());
+console.log("Task 4 part 2:", borrower1.borrowedBooks);
+//logging task 4
